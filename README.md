@@ -70,54 +70,41 @@ The `ImageCustomizer` component provides:
    - Reset canvas
 4. **Real-time Preview**: See changes instantly on the product
 
-## 🔌 Shopify Integration Points
+## 🔌 Shopify Integration
 
-The codebase is structured for easy Shopify integration:
+✅ **Fully Integrated with Shopify!**
 
-### 1. Product Fetching (`src/lib/shopify/index.ts`)
+This project is now fully integrated with Shopify's Storefront API. All product data, cart management, and checkout are handled through Shopify.
 
-Replace mock functions with Shopify Storefront API:
+### Quick Setup
 
-```typescript
-// TODO: Replace with Shopify GraphQL query
-export const getProducts = async (): Promise<Product[]> => {
-  // Current: Returns mock data from products.json
-  // Future: Query Shopify Storefront API
-  const response = await fetch('YOUR_SHOPIFY_STOREFRONT_API', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Shopify-Storefront-Access-Token': 'YOUR_TOKEN'
-    },
-    body: JSON.stringify({
-      query: `{ products(first: 50) { ... } }`
-    })
-  });
-  // Parse and return products
-};
-```
+1. **Create a Shopify Custom App**
+   - Go to Shopify Admin > Settings > Apps and sales channels > Develop apps
+   - Create a new app and configure Storefront API scopes
 
-### 2. Cart Management
+2. **Configure Environment Variables**
+   - Copy `.env.example` to `.env`
+   - Add your Shopify store domain and Storefront API token
 
-Current: Uses `localStorage`  
-Future: Replace with Shopify Cart API
+3. **Add Products to Shopify**
+   - Add products in Shopify Admin
+   - Use product types for categories (hangers, clocks, office)
+   - Optionally add metafields for material and dimensions
 
-```typescript
-// TODO: Connect to Shopify Cart API
-export const addToCart = async (item: CartItem) => {
-  // Call Shopify Cart API to add item with customization data
-  // Store customization.imageData as metafield or custom attribute
-};
-```
+4. **Start Development**
+   ```bash
+   npm run dev
+   ```
 
-### 3. Checkout
+For detailed setup instructions, see [SHOPIFY_INTEGRATION_GUIDE.md](./SHOPIFY_INTEGRATION_GUIDE.md)
 
-The "Proceed to Checkout" button in `Cart.tsx` should redirect to Shopify checkout:
+### Features
 
-```typescript
-// Redirect to Shopify checkout with cart items
-window.location.href = shopifyCheckoutUrl;
-```
+- ✅ Product fetching from Shopify Storefront API
+- ✅ Cart synced with Shopify checkout session
+- ✅ Customization data saved as line item attributes
+- ✅ Secure checkout hosted by Shopify
+- ✅ No mock data fallbacks - pure Shopify integration
 
 ## 🚀 Getting Started
 

@@ -36,22 +36,29 @@ const ProductDetail = () => {
     fetchProduct();
   }, [id]);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
     if (!product) return;
 
-    addToCart({
-      product,
-      quantity: 1,
-      customization: {
-        imageData: customization.imageData,
-        customObjects: customization.customObjects,
-      },
-      id: `${product.id}-${Date.now()}`,
-    });
+    try {
+      await addToCart({
+        product,
+        quantity: 1,
+        customization: {
+          imageData: customization.imageData,
+          customObjects: customization.customObjects,
+        },
+        id: `${product.id}-${Date.now()}`,
+      });
 
-    toast.success("Added to cart!", {
-      description: "Your customized product has been added to your cart.",
-    });
+      toast.success("Added to cart!", {
+        description: "Your customized product has been added to your cart.",
+      });
+    } catch (error) {
+      console.error('Failed to add to cart:', error);
+      toast.error("Failed to add to cart", {
+        description: "Please try again or check your connection.",
+      });
+    }
   };
 
   return (

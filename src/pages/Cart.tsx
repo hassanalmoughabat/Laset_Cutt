@@ -6,10 +6,11 @@ import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CartItem, getCart, removeFromCart, updateCartItem } from "@/lib/shopify";
+import { CartItem, getCart, removeFromCart, updateCartItem, getCheckoutUrl } from "@/lib/shopify";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
 
   const loadCart = () => {
     setCartItems(getCart());
@@ -38,6 +39,27 @@ const Cart = () => {
     (sum, item) => sum + item.product.price * item.quantity,
     0
   );
+
+  const handleCheckout = async () => {
+    setIsCheckingOut(true);
+    try {
+      const checkoutUrl = await getCheckoutUrl();
+      if (checkoutUrl) {
+        window.location.href = checkoutUrl;
+      } else {
+        toast.error("Checkout unavailable", {
+          description: "Please configure Shopify credentials or contact support.",
+        });
+      }
+    } catch (error) {
+      console.error('Checkout failed:', error);
+      toast.error("Checkout failed", {
+        description: "Please try again or contact support.",
+      });
+    } finally {
+      setIsCheckingOut(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -161,11 +183,17 @@ const Cart = () => {
                     <span className="text-2xl font-semibold text-accent">${subtotal.toFixed(2)}</span>
                   </div>
 
-                  <Button variant="hero" size="lg" className="w-full shadow-glow">
-                    Proceed to checkout
+                  <Button
+                    variant="hero"
+                    size="lg"
+                    className="w-full shadow-glow"
+                    onClick={handleCheckout}
+                    disabled={isCheckingOut}
+                  >
+                    {isCheckingOut ? 'Redirecting...' : 'Proceed to checkout'}
                   </Button>
                   <p className="text-xs text-muted-foreground text-center">
-                    Checkout will be completed via Shopify. We&apos;ll email a proof if adjustments are needed.
+                    Secure checkout powered by Shopify. We&apos;ll email a proof if adjustments are needed.
                   </p>
                   <Link to="/shop" className="block">
                     <Button variant="outline" className="w-full border-border/60">
