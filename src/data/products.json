@@ -1,0 +1,120 @@
+{
+  "products": [
+    {
+      "id": "hanger-1",
+      "name": "Custom Name Hanger",
+      "category": "hangers",
+      "price": 24.99,
+      "description": "Elegant laser-cut wooden hanger, perfect for personalizing with names, quotes, or custom designs. Made from premium birch plywood.",
+      "image": "/images/2.jpg",
+      "material": "Birch Plywood",
+      "dimensions": "16\" x 8\"",
+      "customizable": true
+    },
+    {
+      "id": "hanger-2",
+      "name": "Wedding Dress Hanger",
+      "category": "hangers",
+      "price": 29.99,
+      "description": "Sophisticated wedding dress hanger with elegant curves. Customize with bride's name or wedding date.",
+      "image": "/images/1.jpg",
+      "material": "Maple Wood",
+      "dimensions": "18\" x 8\"",
+      "customizable": true
+    },
+    {
+      "id": "clock-1",
+      "name": "Modern Wall Clock",
+      "category": "clocks",
+      "price": 39.99,
+      "description": "Contemporary laser-cut wall clock. Add your own design or choose from our templates.",
+      "image": "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=800",
+      "material": "Acrylic",
+      "dimensions": "12\" diameter",
+      "customizable": true
+    },
+    {
+      "id": "clock-2",
+      "name": "Geometric Clock",
+      "category": "clocks",
+      "price": 44.99,
+      "description": "Bold geometric design clock perfect for modern spaces. Fully customizable face design.",
+      "image": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=800",
+      "material": "Birch Plywood",
+      "dimensions": "14\" x 14\"",
+      "customizable": true
+    },
+    {
+      "id": "office-1",
+      "name": "Employee ID Badge",
+      "category": "office",
+      "price": 14.99,
+      "description": "Professional laser-cut ID badge with custom logo space. Durable and elegant.",
+      "image": "https://images.unsplash.com/photo-1553835973-dec43bfddbeb?w=800",
+      "material": "Acrylic",
+      "dimensions": "3.5\" x 2.5\"",
+      "customizable": true
+    },
+    {
+      "id": "office-2",
+      "name": "Desk Name Plate",
+      "category": "office",
+      "price": 19.99,
+      "description": "Sleek desk nameplate with custom text and logo support. Perfect for offices.",
+      "image": "https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=800",
+      "material": "Black Acrylic",
+      "dimensions": "8\" x 2\"",
+      "customizable": true
+    },
+    {
+      "id": "clock-kuwait",
+      "name": "Kuwait Map Wall Clock",
+      "category": "clocks",
+      "price": 35.000,
+      "description": "Beautiful wooden wall clock featuring Kuwait map silhouette. Roman numerals and elegant design perfect for any home or office.",
+      "image": "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=800",
+      "material": "Wood",
+      "dimensions": "30 cm diameter",
+      "customizable": true
+    },
+    {
+      "id": "hanger-gymnastics",
+      "name": "Gymnastics Medal Hanger",
+      "category": "hangers",
+      "price": 26.100,
+      "description": "Display your gymnastics medals with pride! Features a graceful gymnast silhouette with multiple hooks for medals and ribbons.",
+      "image": "https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?w=800",
+      "material": "Black Acrylic",
+      "dimensions": "40 cm x 30 cm",
+      "customizable": true
+    },
+    {
+      "id": "office-desk-sign",
+      "name": "Reconsider Desk Sign",
+      "category": "office",
+      "price": 12.500,
+      "description": "Funny office desk sign with customizable text. Perfect for adding humor to your workspace. Premium acrylic with clean engraving.",
+      "image": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800",
+      "material": "Silver Acrylic",
+      "dimensions": "20 cm x 5 cm",
+      "customizable": true
+    }
+  ],
+  "categories": [
+    {
+      "id": "hangers",
+      "name": "Hangers",
+      "description": "Custom name hangers for weddings, closets, and special occasions"
+    },
+    {
+      "id": "clocks",
+      "name": "Clocks",
+      "description": "Modern laser-cut wall clocks with customizable designs"
+    },
+    {
+      "id": "office",
+      "name": "Office IDs",
+      "description": "Professional ID badges and desk accessories"
+    }
+  ]
+}

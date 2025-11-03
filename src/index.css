@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  @font-face {
+    font-family: "Angelos";
+    src: url("/fonts/angelos-personal-use/Angelos.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Eagle Horizon";
+    src: url("/fonts/eagle-horizon-personal-use/EagleHorizonP.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Lucy Said Ok";
+    src: url("/fonts/lucy-said-ok-personal-use/Lucy Said Ok Personal Use.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Perfecto Calligraphy";
+    src: url("/fonts/perfecto-calligraphy-personal-use/PerfectoCalligraphy.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Ruigslay";
+    src: url("/fonts/ruigslay/Ruigslay.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Rustic Roadway";
+    src: url("/fonts/rustic-roadway-personal-use/RusticRoadway.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Transcity";
+    src: url("/fonts/transcity/Transcity DEMO.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Hugh is Life";
+    src: url("/fonts/hugh-is-life-personal-use/Hugh is Life Personal Use .ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Shlop";
+    src: url("/fonts/shlop/shlop rg.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 33 60% 98%;
+    --foreground: 219 39% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 219 39% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 219 39% 11%;
+
+    --primary: 222 66% 21%;
+    --primary-foreground: 210 40% 96%;
+
+    --secondary: 210 23% 92%;
+    --secondary-foreground: 219 39% 11%;
+
+    --muted: 210 31% 92%;
+    --muted-foreground: 217 16% 35%;
+
+    --accent: 17 95% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 350 84% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 26% 86%;
+    --input: 210 26% 86%;
+    --ring: 17 95% 56%;
+
+    --radius: 0.75rem;
+
+    --gradient-metallic: linear-gradient(135deg, hsl(210 30% 97%) 0%, hsl(210 22% 90%) 100%);
+    --gradient-industrial: linear-gradient(135deg, hsl(220 60% 25%) 0%, hsl(220 64% 19%) 100%);
+    --gradient-laser: linear-gradient(135deg, hsl(17 95% 56%) 0%, hsl(27 94% 61%) 100%);
+    --gradient-aurora: linear-gradient(140deg, hsla(219, 78%, 18%, 0.92) 0%, hsla(217, 84%, 22%, 0.88) 45%, hsla(17, 95%, 56%, 0.82) 100%);
+
+    --glow-laser: 0 0 32px hsla(17, 95%, 56%, 0.35);
+    --glow-subtle: 0 18px 48px hsla(219, 60%, 18%, 0.08);
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 214 32% 91%;
+
+    --card: 222 20% 11%;
+    --card-foreground: 214 32% 91%;
+
+    --popover: 222 24% 12%;
+    --popover-foreground: 214 32% 91%;
+
+    --primary: 210 40% 96%;
+    --primary-foreground: 222 67% 14%;
+
+    --secondary: 222 24% 18%;
+    --secondary-foreground: 214 32% 91%;
+
+    --muted: 222 24% 16%;
+    --muted-foreground: 216 20% 65%;
+
+    --accent: 22 92% 62%;
+    --accent-foreground: 222 67% 14%;
+
+    --destructive: 350 84% 62%;
+    --destructive-foreground: 0 0% 0%;
+
+    --border: 222 23% 18%;
+    --input: 222 23% 18%;
+    --ring: 22 92% 62%;
+
+    --gradient-metallic: linear-gradient(135deg, hsl(222 28% 16%) 0%, hsl(222 24% 12%) 100%);
+    --gradient-industrial: linear-gradient(135deg, hsl(221 66% 18%) 0%, hsl(221 78% 12%) 100%);
+    --gradient-laser: linear-gradient(135deg, hsl(22 92% 62%) 0%, hsl(17 80% 56%) 100%);
+    --gradient-aurora: linear-gradient(140deg, hsla(221, 77%, 18%, 0.94) 0%, hsla(221, 84%, 21%, 0.9) 40%, hsla(22, 92%, 62%, 0.82) 100%);
+
+    --glow-laser: 0 0 34px hsla(22, 92%, 62%, 0.4);
+    --glow-subtle: 0 20px 60px hsla(221, 60%, 12%, 0.35);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-image: radial-gradient(circle at top right, hsla(22, 92%, 72%, 0.25), transparent 40%),
+      radial-gradient(circle at 10% 20%, hsla(221, 78%, 92%, 0.45), transparent 45%);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Manrope", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    @apply text-muted-foreground;
+  }
+
+  ::selection {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+}
